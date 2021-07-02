@@ -3,15 +3,15 @@ import React, { useContext, useEffect, useState } from "react";
 export const Planetas = () => {
     const {store, actions}= useContext(Context);
     
-    // let [dataPlanetas,setDataPlanetas] = useState([]);
+     let [dataPlanetas,setDataPlanetas] = useState([]);
 
-    // const planetList = () => {
-    //     fetch("url",{
-    //         method:"GET"
-    //     })
-    //     .then(response => response.json())
-    //     .then(data => setDataPlanetas(data.results));
-    // };
+    const planetList = () => {
+        fetch("https://swapi.dev/api/planets/1/",{
+            method:"GET"
+        })
+        .then(response => response.json())
+        .then(data => setDataPlanetas(data.results));
+    };
 
 
     useEffect(()=>{
